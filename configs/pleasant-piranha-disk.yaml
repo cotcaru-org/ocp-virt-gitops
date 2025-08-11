@@ -11,6 +11,7 @@ spec:
   accessModes:
     - ReadWriteMany
   volumeMode: Block
+  storageClassName: ocs-storagecluster-ceph-rbd-virtualization
   resources:
     requests:
       storage: 30Gi
