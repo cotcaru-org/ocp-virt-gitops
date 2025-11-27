@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: pleasant-piranha-disk
-  namespace: vms
+  namespace: vms-test
 spec:
   dataSourceRef:
     apiGroup: cdi.kubevirt.io
