@@ -15,13 +15,13 @@ items:
           }
         ]
     labels:
-      app: rhel9-pleasant-piranha
+      app: rhel9-git
       kubevirt.io/dynamic-credentials-support: "true"
       vm.kubevirt.io/template: rhel9-server-small
       vm.kubevirt.io/template.revision: "1"
       vm.kubevirt.io/template.version: v0.26.0
-    name: rhel9-pleasant-piranha
-  spec:    
+    name: rhel9-git
+  spec:
     running: true
     template:
       metadata:
@@ -30,7 +30,7 @@ items:
           vm.kubevirt.io/os: rhel9
           vm.kubevirt.io/workload: server
         labels:
-          kubevirt.io/domain: rhel9-pleasant-piranha
+          kubevirt.io/domain: rhel9-git
           kubevirt.io/size: small
       spec:
         domain:
@@ -42,7 +42,7 @@ items:
             disks:
             - disk:
                 bus: virtio
-              name: pleasant-rootdisk
+              name: git-rootdisk
             - disk:
                 bus: virtio
               name: cloudinitdisk
@@ -68,8 +68,8 @@ items:
         terminationGracePeriodSeconds: 180
         volumes:
         - persistentVolumeClaim:
-            claimName: pleasant-piranha-disk
-          name: pleasant-rootdisk
+            claimName: git-disk
+          name: git-rootdisk
         - cloudInitNoCloud:
             userData: |-
               #cloud-config
